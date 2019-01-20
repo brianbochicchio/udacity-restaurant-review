@@ -136,7 +136,7 @@ nav h1 a {
 
 /* ====================== Restaurant Listing ====================== */
 #restaurants-list {
-  width:100%;
+  max-width: 1280px;
   background-color: #f3f3f3;
   list-style: outside none none;
   margin: 0;
@@ -145,7 +145,7 @@ nav h1 a {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
-  align-items: center;
+  align-items: stretch;
 }
 #restaurants-list li {
   background-color: #fff;
@@ -158,8 +158,8 @@ nav h1 a {
   width: 16.875em;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-evenly;
+
 }
 #restaurants-list .restaurant-img {
   background-color: #ccc;
@@ -289,11 +289,10 @@ nav h1 a {
 }
 
 @media only screen and (min-width: 320px) {
-  body {
-    background-color: lightblue;
-  }
+
   #restaurants-list li {
     flex-grow: 1;
+    
     }
 }
 
@@ -301,6 +300,7 @@ nav h1 a {
 
   #restaurants-list li {
     flex-grow: 0;
+  
     }
 }
 
@@ -308,7 +308,7 @@ nav h1 a {
 
   #restaurants-list li {
     flex-grow: 0;
-
+    width: 22em;
     }
 }
 
@@ -316,5 +316,6 @@ nav h1 a {
 
   #restaurants-list li {
     flex-grow: 0;
+    width: 22.5em;
     }
 }
