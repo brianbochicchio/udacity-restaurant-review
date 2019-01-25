@@ -198,6 +198,7 @@ nav h1 a {
 /* ====================== Restaurant Details ====================== */
 
 #restaurant-details{
+  max-width: 1280px;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
@@ -238,7 +239,7 @@ nav h1 a {
   border-bottom: 0.0625em solid #d9d9d9;
   border-top: 0.0625em solid #fff;
   padding: 1.5em 2.5em 1.875em;
-  width: 25%;
+  width: 32.375em;
 
   
 
@@ -297,6 +298,12 @@ nav h1 a {
     flex-grow: 0;
     width: 22em;
     }
+
+    #restaurant-container, #reviews-container {
+      width: 24.375em;   
+      }
+
+
 }
 
 @media only screen and (min-width: 1024px) {
@@ -305,4 +312,8 @@ nav h1 a {
     flex-grow: 0;
     width: 22.5em;
     }
+
+    #restaurant-container, #reviews-container {
+      width: 34.375em;   
+      }
 }
