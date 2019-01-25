@@ -74,9 +74,7 @@ nav h1 a {
     list-style: none;
     background-color: #eee;
     font-size: 1.0625em;
-    
     margin: 0;
-    width: calc(50% - 5em);
 }
 
 /* Display list items side by side */
@@ -111,9 +109,10 @@ nav h1 a {
 /* ====================== Restaurant Filtering ====================== */
 .filter-options {
   width: 100%;
-  height: 3.125em;
+  height: 5em;
   background-color: #3397DB;
   align-items: center;
+  padding-top: .5em
 }
 .filter-options h2 {
   color: white;
@@ -197,30 +196,15 @@ nav h1 a {
 }
 
 /* ====================== Restaurant Details ====================== */
-.inside header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
+
+#restaurant-details{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+
+
 }
-.inside #map-container {
-  background: blue none repeat scroll 0 0;
-  height: 87%;
-  position: fixed;
-  right: 0;
-  top: 5em;
-  width: 50%;
-}
-.inside #map {
-  background-color: #ccc;
-  height: 100%;
-  width: 100%;
-}
-.inside #footer {
-  bottom: 0;
-  position: absolute;
-  width: 50%;
-}
+
 #restaurant-name {
   color: #f18200;
   font-family: Arial,sans-serif;
@@ -253,8 +237,11 @@ nav h1 a {
 #restaurant-container, #reviews-container {
   border-bottom: 0.0625em solid #d9d9d9;
   border-top: 0.0625em solid #fff;
-  padding: 12.5em 2.5em 1.875em;
-  width: 50%;
+  padding: 1.5em 2.5em 1.875em;
+  width: 25%;
+
+  
+
 }
 #reviews-container {
   padding: 1.875em 2.5em 5em;
