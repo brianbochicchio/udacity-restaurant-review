@@ -153,6 +153,13 @@ class DBHelper {
     return (`/img/${restaurant.photograph}`);
   }
 
+   /**
+   * alternate Restaurant image URL.
+   */
+  static imageUrlForRestaurantSmall(restaurant) {
+    return (`/img/${restaurant.photographSmall}`);
+  }
+
   /**
    * Map marker for a restaurant.
    */
