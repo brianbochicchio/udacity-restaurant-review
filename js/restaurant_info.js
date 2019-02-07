@@ -1,5 +1,6 @@
 let restaurant;
 var newMap;
+var ratingTabIndex = 8;
 
 /**
  * Initialize map as soon as the page is loaded.
@@ -81,9 +82,11 @@ fetchRestaurantFromURL = (callback) => {
  */
 fillRestaurantHTML = (restaurant = self.restaurant) => {
   const name = document.getElementById('restaurant-name');
+  name.setAttribute("tabindex", "5");
   name.innerHTML = restaurant.name;
 
   const address = document.getElementById('restaurant-address');
+  address.setAttribute("tabindex", "6");
   address.innerHTML = restaurant.address;
 
   const image = document.getElementById('restaurant-img');
@@ -118,7 +121,7 @@ fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => 
     const time = document.createElement('td');
     time.innerHTML = operatingHours[key];
     row.appendChild(time);
-
+    row.setAttribute("role", "row");
     hours.appendChild(row);
   }
 }
@@ -130,6 +133,7 @@ fillReviewsHTML = (reviews = self.restaurant.reviews) => {
   const container = document.getElementById('reviews-container');
   const title = document.createElement('h2');
   title.innerHTML = 'Reviews';
+  title.setAttribute("tabindex", "8");
   container.appendChild(title);
 
   if (!reviews) {
@@ -153,6 +157,7 @@ createReviewHTML = (review) => {
   const hdrDiv = document.createElement('div');
   const name = document.createElement('p');
   name.innerHTML = review.name;
+  name.setAttribute("tabindex", ratingTabIndex++);
   hdrDiv.appendChild(name);
   const date = document.createElement('span');
   date.innerHTML = review.date;
@@ -163,11 +168,13 @@ createReviewHTML = (review) => {
   const rating = document.createElement('span');
   rating.innerHTML = `Rating: ${review.rating}`;
   rating.classList.add("reviews_rating");
+  rating.setAttribute("tabindex", ratingTabIndex++);
   ratingHolder.appendChild(rating); 
   li.appendChild(ratingHolder);
 
   const comments = document.createElement('p');
   comments.innerHTML = review.comments;
+  comments.setAttribute("tabindex", ratingTabIndex++);
   li.appendChild(comments);
 
   return li;

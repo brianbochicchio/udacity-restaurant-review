@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <!-- Goolge normalize link appeared dead. Switched to normalize. -->
@@ -14,20 +14,22 @@
   <header>
     <nav>
       <h1><a href="/">Restaurant Reviews</a></h1>
-    </nav>
+      <a href="#content"><img src="img/placeholder.gif" width="0" height="0" border="0" alt="skip to content" /></a>
+    </nav>  
   </header>
-
+  
   <main id="maincontent">
     <section id="map-container">
       <div id="map"></div>
     </section>
     <section>
-      <div class="filter-options">
+      
+      <div class="filter-options" id="content">
         <h2>Filter Results</h2>
-        <select id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()">
-          <option value="all">All Neighborhoods</option>
+        <select aria-label="Select a neighborhood" id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()">
+          <option value="all" >All Neighborhoods</option>
         </select>
-        <select id="cuisines-select" name="cuisines" onchange="updateRestaurants()">
+        <select aria-label="Select a cuisine" id="cuisines-select" name="cuisines" onchange="updateRestaurants()">
           <option value="all">All Cuisines</option>
         </select>
       </div>
