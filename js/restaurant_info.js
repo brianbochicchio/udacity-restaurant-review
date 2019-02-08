@@ -1,6 +1,5 @@
 let restaurant;
 var newMap;
-var ratingTabIndex = 8;
 
 /**
  * Initialize map as soon as the page is loaded.
@@ -82,11 +81,11 @@ fetchRestaurantFromURL = (callback) => {
  */
 fillRestaurantHTML = (restaurant = self.restaurant) => {
   const name = document.getElementById('restaurant-name');
-  name.setAttribute("tabindex", "5");
+  name.setAttribute("tabindex", "0");
   name.innerHTML = restaurant.name;
 
   const address = document.getElementById('restaurant-address');
-  address.setAttribute("tabindex", "6");
+  address.setAttribute("tabindex", "0");
   address.innerHTML = restaurant.address;
 
   const image = document.getElementById('restaurant-img');
@@ -133,7 +132,7 @@ fillReviewsHTML = (reviews = self.restaurant.reviews) => {
   const container = document.getElementById('reviews-container');
   const title = document.createElement('h2');
   title.innerHTML = 'Reviews';
-  title.setAttribute("tabindex", "8");
+  title.setAttribute("tabindex", "0");
   container.appendChild(title);
 
   if (!reviews) {
@@ -157,7 +156,7 @@ createReviewHTML = (review) => {
   const hdrDiv = document.createElement('div');
   const name = document.createElement('p');
   name.innerHTML = review.name;
-  name.setAttribute("tabindex", ratingTabIndex++);
+  name.setAttribute("tabindex", "0");
   hdrDiv.appendChild(name);
   const date = document.createElement('span');
   date.innerHTML = review.date;
@@ -168,13 +167,13 @@ createReviewHTML = (review) => {
   const rating = document.createElement('span');
   rating.innerHTML = `Rating: ${review.rating}`;
   rating.classList.add("reviews_rating");
-  rating.setAttribute("tabindex", ratingTabIndex++);
+  rating.setAttribute("tabindex", "0");
   ratingHolder.appendChild(rating); 
   li.appendChild(ratingHolder);
 
   const comments = document.createElement('p');
   comments.innerHTML = review.comments;
-  comments.setAttribute("tabindex", ratingTabIndex++);
+  comments.setAttribute("tabindex", "0");
   li.appendChild(comments);
 
   return li;
